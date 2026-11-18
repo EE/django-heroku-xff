@@ -1,0 +1,27 @@
+[project]
+name = "django-heroku-xff"
+version = "0.1.0"
+description = "Set REMOTE_ADDR to the client address Heroku's router appends to X-Forwarded-For."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11,<4.0"
+dependencies = ["django (>=4.2,<7.0)"]
+
+[project.urls]
+Repository = "https://github.com/EE/django-heroku-xff"
+
+[tool.poetry]
+packages = [{ include = "heroku_xff" }]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-django = "*"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "test_settings"
+pythonpath = ["."]
+python_files = ["*_tests.py"]
+
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"
